@@ -14,12 +14,12 @@ beforeAll(async () => {
 
 describe('eosio.saving', () => {
   it("check time in past", async () => {
-    await time.actions.checktime(["2022-09-07T00:00:00"]).send();
+    await time.actions.checktime(["2022-09-07T00:00:00.000"]).send();
     expect(true).toBe(true);
   });
 
   it("error: check time in future", async () => {
-    const action = time.actions.checktime(["2030-01-01T00:00:00"]).send();
+    const action = time.actions.checktime(["2030-01-01T00:00:00.000"]).send();
     await expectToThrow(action, "invalid [time] timestamp must be in the future");
   });
 });

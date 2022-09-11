@@ -14,7 +14,7 @@ public:
      * @pre Transaction silently passes if current time is past {{time}} timestamp.
      * */
     [[eosio::action]]
-    void checktime( const time_point_sec time ) {
-        check(current_time_point() >= time_point(time), "eosio.time::checktime: invalid [time] timestamp must be in the future");
+    void checktime( const time_point time ) {
+        check(current_time_point() >= time, "eosio.time::checktime: invalid [time] timestamp must be in the future");
     }
 };
