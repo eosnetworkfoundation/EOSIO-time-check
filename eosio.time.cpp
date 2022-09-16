@@ -10,11 +10,11 @@ public:
     /**
      * Check current time
      *
-     * @pre Assert error if time is prior to {{time}} timestamp.
-     * @pre Transaction silently passes if current time is past {{time}} timestamp.
+     * @pre Assert error if time is not passed {{time}} timestamp.
+     * @pre Transaction silently passes if the current time is passed {{time}} timestamp.
      * */
     [[eosio::action]]
     void checktime( const time_point time ) {
-        check(current_time_point() >= time, "eosio.time::checktime: invalid [time] timestamp must be in the future");
+        check(current_time_point() > time, "the current time must be passed [time] timestamp");
     }
 };

@@ -2,16 +2,16 @@
 
 ## Quickstart
 
-1. Assert error if time is prior to {{time}} timestamp.
-2. Transaction silently passes if current time is past {{time}} timestamp.
+1. Assert error if time is not passed {{time}} timestamp.
+2. Transaction silently passes if the current time is passed {{time}} timestamp.
 
 ```bash
 # Check time in past
-$ cleos push action eosio.time checktime '["2022-09-07T00:00:00"]' -p eosio.time
+$ cleos push action eosio.time checktime '["2022-09-07T00:00:00.000"]' -p eosio.time
 # //=> transaction passes
 
 # Check time in future
-$ cleos push action eosio.time checktime '["2030-01-01T00:00:00"]' -p eosio.time
+$ cleos push action eosio.time checktime '["2030-01-01T00:00:00.000"]' -p eosio.time
 # //=> transaction fails
 ```
 
@@ -34,12 +34,12 @@ blanc++ eosio.time.cpp
 $ git clone https://github.com/eosnetworkfoundation/eosio.time.git
 $ ./build.sh
 compiling... [eosio.time]
-d3333939d82a25f7bf0d9c83a805bfb7efb438ddc0b5567e35e7531b7734c700  eosio.time.wasm
+7ac2e166c29312513ffac260f57ff9c412f2fb009ce3b8c065b7e6c9bcb5f3ff  eosio.time.wasm
 ```
 
 **EOS Mainnet**
 
 ```bash
 $ cleos -u https://eos.api.eosnation.io get code time.eosn
-code hash: d3333939d82a25f7bf0d9c83a805bfb7efb438ddc0b5567e35e7531b7734c700
+code hash: 7ac2e166c29312513ffac260f57ff9c412f2fb009ce3b8c065b7e6c9bcb5f3ff
 ```

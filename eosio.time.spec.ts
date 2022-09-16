@@ -20,7 +20,7 @@ describe('eosio.saving', () => {
 
   it("error: check time in future", async () => {
     const action = time.actions.checktime(["2030-01-01T00:00:00.000"]).send();
-    await expectToThrow(action, "invalid [time] timestamp must be in the future");
+    await expectToThrow(action, "the current time must be passed [time] timestamp");
   });
 });
 
