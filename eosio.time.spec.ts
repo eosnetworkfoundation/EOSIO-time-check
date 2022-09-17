@@ -12,7 +12,7 @@ beforeAll(async () => {
   blockchain.setTime(TimePointSec.from(new Date()));
 });
 
-describe('eosio.saving', () => {
+describe('eosio.time', () => {
   it("check time in past", async () => {
     await time.actions.checktime(["2022-09-07T00:00:00.000"]).send();
     expect(true).toBe(true);
