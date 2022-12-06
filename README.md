@@ -1,4 +1,7 @@
-# `EOSIO Time` smart contract [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/facebook/react/blob/main/LICENSE) [![EOSIO Smart Contract](https://github.com/eosnetworkfoundation/eosio.time/actions/workflows/tests.yml/badge.svg)](https://github.com/eosnetworkfoundation/eosio.time/actions/workflows/tests.yml)
+# `EOSIO Time` smart contract
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/eosnetworkfoundation/eosio.time/blob/main/LICENSE)
+[![Antelope CDT](https://github.com/eosnetworkfoundation/eosio.time/actions/workflows/release.yml/badge.svg)](https://github.com/eosnetworkfoundation/eosio.time/actions/workflows/release.yml)
+[![Blanc++ Vert](https://github.com/eosnetworkfoundation/eosio.time/actions/workflows/tests.yml/badge.svg)](https://github.com/eosnetworkfoundation/eosio.time/actions/workflows/tests.yml)
 
 ## Quickstart
 
@@ -18,28 +21,29 @@ $ cleos push action eosio.time checktime '["2030-01-01T00:00:00.000"]' -p eosio.
 ## Build
 
 ```bash
-# using EOSIO CDT
-$ eosio-cpp eosio.time.cpp
-
+# using Antelope CDT
+$ cdt-cpp eosio.time.cpp
 # using Blanc++
-blanc++ eosio.time.cpp
+$ blanc++ eosio.time.cpp
 ```
 
 ## SHA256 Checksum
 
 **CDT**
-- [Blanc v0.12.0](https://github.com/haderech/blanc/releases/tag/0.12.0)
+- [Blanc++ `v0.12.0`](https://github.com/haderech/blanc/releases/tag/0.12.1)
+- [Antelope CDT `v3.0.1`](https://github.com/AntelopeIO/cdt/releases/tag/v3.0.1)
 
 ```bash
 $ git clone https://github.com/eosnetworkfoundation/eosio.time.git
-$ ./build.sh
-compiling... [eosio.time]
-7ac2e166c29312513ffac260f57ff9c412f2fb009ce3b8c065b7e6c9bcb5f3ff  eosio.time.wasm
+$ cd eosio.time
+$ cdt-cpp eosio.time.cpp
+$ shasum -a 256 eosio.time.wasm
+f7d64016a473a3f43047c19932d3df42506e7973918751cc39d863c1fb6234d0  eosio.time.wasm
 ```
 
 **EOS Mainnet**
 
 ```bash
-$ cleos -u https://eos.api.eosnation.io get code time.eosn
-code hash: 7ac2e166c29312513ffac260f57ff9c412f2fb009ce3b8c065b7e6c9bcb5f3ff
+$ cleos -u https://eos.api.eosnation.io get code eosio.time
+code hash: f7d64016a473a3f43047c19932d3df42506e7973918751cc39d863c1fb6234d0
 ```
