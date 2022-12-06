@@ -4,6 +4,7 @@
   "name": "eosio.time",
   "version": "1.0.0",
   "description": "EOSIO Time",
+  "type": "module",
   "repository": "git@github.com:eosnetworkfoundation/eosio.time.git",
   "contributors": [
     "Denis Carriere - EOS Nation <denis@eosnation.io>"
@@ -11,7 +12,7 @@
   "scripts": {
     "build": "blanc++ eosio.time.cpp -I include",
     "release": "cdt-cpp eosio.time.cpp -I include",
-    "test": "node *.spec.mjs"
+    "test": "node *.spec.js"
   },
   "devDependencies": {
     "@proton/vert": "*"
