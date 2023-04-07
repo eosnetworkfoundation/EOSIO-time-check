@@ -3,7 +3,7 @@
 
 using namespace eosio;
 
-CONTRACT code : public eosio::contract {
+class [[eosio::contract("eosio.time")]] code : public eosio::contract {
 public:
     using contract::contract;
 
